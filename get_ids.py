@@ -88,7 +88,7 @@ if not os.path.exists(id_folder):
 new_filepath = f'{id_folder}/data_{today_str}.piclke'
 
 with open(new_filepath, 'wb') as f:
-    pickle.dump(new_data, f)
+    pickle.dump(all_data, f)
 
 
 
