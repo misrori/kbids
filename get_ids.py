@@ -2,6 +2,7 @@ import requests
 import pandas as pd
 import datetime
 import pickle
+import os
 
 cookies = {
     '_ga': 'GA1.1.772192671.1734972176',
@@ -80,7 +81,14 @@ data = pd.DataFrame(all_data)
 today = datetime.date.today()
 today_str = today.strftime("%Y_%m_%d")
 
-new_filepath = f'data_{today_str}.piclke'
+id_folder = 'kbids'
+if not os.path.exists(id_folder):
+    os.makedirs(id_folder)
+
+new_filepath = f'{id_folder}/data_{today_str}.piclke'
 
 with open(new_filepath, 'wb') as f:
     pickle.dump(new_data, f)
+
+
+
