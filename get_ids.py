@@ -52,7 +52,7 @@ t = response.json()
 
 osszes = t['totalRecords']
 # round up to 10000
-
+max_page = round(osszes / 10000) * 10000 + 10000
 
 all_data = []
 ofsetek = list(range(0, max_page, 10000))
